@@ -1,13 +1,13 @@
 import { Router } from "express";
-import ExampleController from "./app/controllers/StudentController";
+import StudentController from "./app/controllers/StudentController";
 
 const routes: Router = Router();
 
 // Rotas exemplo
-routes.post('/products', ExampleController.create);
-routes.get('/products', ExampleController.find);
-routes.get('/products/:id', ExampleController.findOne);
-routes.put('/products/:id', ExampleController.updateOne);
-routes.delete('/products/:id', ExampleController.deleteOne);
+routes.post('/students', StudentController.create);
+//routes.get('/products', ExampleController.find);
+//routes.get('/products/:id', ExampleController.findOne);
+//routes.put('/products/:id', ExampleController.updateOne);
+//routes.delete('/products/:id', ExampleController.deleteOne);
 
 export default routes;
