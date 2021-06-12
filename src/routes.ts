@@ -7,7 +7,7 @@ const routes: Router = Router();
 routes.post('/students', StudentController.create);
 //routes.get('/products', ExampleController.find);
 //routes.get('/products/:id', ExampleController.findOne);
-//routes.put('/products/:id', ExampleController.updateOne);
-//routes.delete('/products/:id', ExampleController.deleteOne);
+routes.put('/students/:id', StudentController.updateOne);
+routes.delete('/students/:id', StudentController.deleteOne);
 
 export default routes;

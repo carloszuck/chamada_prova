@@ -16,14 +16,36 @@ class StudentController {
     }
   }
 
-  // método static para atualização do produto
+  // método static para atualização do aluno
   static async updateOne(req: Request, res: Response) {
-    // atualiza
+    const { id } = req.params;
+
+    try {
+      // atualiza o aluno
+      const updated = await Student.updateOne({ _id: id }, req.body);
+
+      // retorna OK se o aluno for atualizado com sucesso
+      return res.status(200).json(updated);
+    } catch (err) {
+      // retorna Bad Request caso ocorra algum erro
+      res.status(400).json(err);
+    }
   }
 
-  // método static para remoção do produto
+  // método static para remoção do aluno
   static async deleteOne(req: Request, res: Response) {
-    // deleta
+    const { id } = req.params;
+
+    try {
+      // deleta o aluno
+      const deleted = await Student.deleteOne({ _id: id });
+
+      // retorna OK se o aluno for deletado com sucesso
+      return res.status(200).json(deleted);
+    } catch (err) {
+      // retorna Bad Request caso ocorra algum erro
+      res.status(400).json(err);
+    }
   }
 
   // método static para listar todos os produtos
