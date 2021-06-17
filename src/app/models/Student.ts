@@ -4,7 +4,7 @@ import mongoose from '../../database';
 export interface StudentInterface extends Document {
   createdAt: Date;
   name: string;
-  class: string;
+  studentClass: string;
   num: number;
   ra: number;
 };
@@ -12,7 +12,7 @@ export interface StudentInterface extends Document {
 const StudentSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
   name: { type: String, required: true },
-  class: { type: String, required: true },
+  studentClass: { type: String, required: true },
   num: { type: Number, required: true },
   ra: { type: Number, required: true }
 });
