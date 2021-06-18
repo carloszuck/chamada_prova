@@ -48,14 +48,34 @@ class StudentController {
     }
   }
 
-  // método static para listar todos os produtos
+  // método static para listar todos os alunos
   static async find(req: Request, res: Response) {
-    // busca todos os itens
+    try {
+      // busca todos os alunos
+      const students = await Student.find();
+
+      // retorna OK e todos os alunos
+      return res.status(200).json(students);
+    } catch (err) {
+      // retorna Bad Request caso ocorra algum erro
+      res.status(400).json(err);
+    }
   }
 
-  // método static para mostrar um produto
+  // método static para mostrar um aluno
   static async findOne(req: Request, res: Response) {
-    // busca um item
+    const { id } = req.params;
+
+    try {
+      // busca o aluno
+      const student = await Student.findOne({ _id: id });
+
+      // retorna OK e o aluno buscado
+      return res.status(200).json(student);
+    } catch (err) {
+      // retorna Bad Request caso ocorra algum erro
+      res.status(400).json(err);
+    }
   }
 }
 
