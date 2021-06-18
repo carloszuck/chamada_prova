@@ -6,7 +6,7 @@ const routes: Router = Router();
 // Rotas exemplo
 routes.post('/create_students', StudentController.create);
 routes.get('/students', StudentController.find);
-routes.get('/students/:id', StudentController.findOne);
+routes.get('/get_one/:id', StudentController.findOne);
 routes.put('/students/:id', StudentController.updateOne);
 routes.delete('/del_students/:id', StudentController.deleteOne);
 
